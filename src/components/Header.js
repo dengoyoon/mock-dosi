@@ -1,12 +1,23 @@
 import React from "react";
-import NavBar from "./NavBar";
+import ExternalNavBar from "./ExternalNavBar";
+import InternalNavBar from "./InternalNavBar";
+
+import "../stylesheets/Header.scss";
 
 function Header() {
   return (
     <header className="header">
-      <div>DOSI Citizen</div>
-      <NavBar />
-      <NavBar />
+      <div className="header-nav">
+        <div className="header-aside-left">
+          <div>DOSI Citizen</div>
+        </div>
+        <nav className="header-body">
+          <InternalNavBar />
+        </nav>
+        <nav className="header-aside-right">
+          <ExternalNavBar />
+        </nav>
+      </div>
     </header>
   );
 }
