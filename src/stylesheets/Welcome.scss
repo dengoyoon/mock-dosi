@@ -1,5 +1,53 @@
+$welcomeHeight : 650px;
+$buttonColor : #2942ed;
+
 .welcome {
-    // height: 600px;
-    // background-color: black;
-    // background-image: radial-gradient(66.6% 66.6% at 50% 100%,rgba(43,69,245,.5) 0,transparent 100%);
+    height: $welcomeHeight;
+    background-color: black;
+    color: white;
+    background-image: radial-gradient(66.6% 66.6% at 50% 100%,rgba(43,69,245,.5) 0,transparent 100%);
+
+    &__content {
+        text-align: center;
+        position: relative;
+        padding: 130px 60px;
+        z-index: 1;
+
+        h3 {
+            margin: 0;
+            font-size: 64px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 27px;
+            opacity: 0.5;
+        }
+
+        button {
+            padding: 19px 36px;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            background-color: $buttonColor;
+            border-radius: 100px;
+            border: 0;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        width: 800px;
+        height: max-content;
+        height: $welcomeHeight;
+        background: url('../img/background-welcome-citizen.png') no-repeat 50% 100%;
+        background-size: contain;
+        bottom: 0;
+        content: "";
+        left: 50%;
+        right: 0;
+        top: 0;
+        transform: translateX(-50%);
+    }
 }
