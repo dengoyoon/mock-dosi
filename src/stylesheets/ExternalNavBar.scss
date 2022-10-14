@@ -1,8 +1,9 @@
 @import './navbar.scss';
 
 .header-aside-right .navbar {
+    padding: 0;
     &__item {
-        padding: 10px 17px;
+        padding: 10px 19px;
         button {
             background-color: transparent;
             border: 0;

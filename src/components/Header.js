@@ -7,7 +7,7 @@ import "../stylesheets/Header.scss";
 
 function Header() {
   return (
-    <header className="header">
+    <header className="header dark">
       <div className="header-nav">
         <div className="header-aside-left">
           <Link to="/">
