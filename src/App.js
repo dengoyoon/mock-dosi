@@ -1,4 +1,3 @@
-import "./stylesheets/App.scss";
 import React from "react";
 import Home from "./Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -7,6 +6,8 @@ import Membership from "./Membership";
 import GiftBox from "./GiftBox";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
+import "./stylesheets/App.scss";
 
 function App() {
   return (

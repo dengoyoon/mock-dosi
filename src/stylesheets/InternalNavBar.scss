@@ -1,0 +1,19 @@
+@import './navbar.scss';
+
+.header-body .navbar {
+    font-size: 16px;
+    font-weight: 600;
+    color: inherit;
+
+    a {
+        padding: 5px 0;
+    }
+
+    &__item {
+        padding: 10px 24px;
+    }
+}
+
+.active {
+    border-bottom: 1px solid;
+}

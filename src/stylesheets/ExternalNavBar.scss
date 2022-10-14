@@ -1,0 +1,17 @@
+@import './navbar.scss';
+
+.header-aside-right .navbar {
+    &__item {
+        padding: 10px 17px;
+        button {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            color: inherit;
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
