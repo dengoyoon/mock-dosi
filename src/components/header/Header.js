@@ -3,7 +3,7 @@ import ExternalNavBar from "./ExternalNavBar";
 import InternalNavBar from "./InternalNavBar";
 import { Link } from "react-router-dom";
 
-import "../stylesheets/Header.scss";
+import "../../stylesheets/Header.scss";
 
 function Header() {
   return (

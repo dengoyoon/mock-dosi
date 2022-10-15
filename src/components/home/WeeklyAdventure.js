@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../stylesheets/WeeklyAdventure.scss";
+import "../../stylesheets/WeeklyAdventure.scss";
 
 function WeeklyAdventure() {
   return (

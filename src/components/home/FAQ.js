@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../stylesheets/FAQ.scss";
+import "../../stylesheets/FAQ.scss";
 
 function FAQ() {
   return (
