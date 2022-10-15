@@ -1,0 +1,70 @@
+$weeklyAdventureHeight : 600px;
+$dosiBlue : #2942ed;
+
+.weekly-adventure {
+    padding: 100px 0;
+    background-color: $dosiBlue;
+    color: white;
+
+    &__header {
+        text-align: center;
+
+        h4 {
+            margin: 0;
+            font-size: 48px;
+            margin-bottom: 13px;
+        }
+
+        p {
+            font-size: 20px;
+            opacity: 0.8;
+        }
+    }
+
+    &__body {
+        margin-top: 27px;
+
+        &__countdown {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 56px;
+        }
+
+        &__carousel {
+            text-align: center;
+        }
+    }
+
+    &__footer {
+        text-align: center;
+        button {
+            margin-top: 40px;
+            padding: 20px 36px;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            background-color: black;
+            border-radius: 100px;
+            border: 1px solid black;
+        }
+    }
+}
+
+.countdown__card {
+    text-align: center;
+    margin-left: 12px;
+    background-color: black;
+    padding : 20px 16px 14px 16px;
+    border-radius: 16px;
+
+    &__body {
+        font-size: 42px;
+        margin-bottom: 4px;
+        font-weight: 700;
+    }
+
+    &__footer {
+        font-size: 14px;
+        opacity: 0.5;
+    }
+}
