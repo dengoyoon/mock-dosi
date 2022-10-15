@@ -24,12 +24,6 @@ $dosiBlue : #2942ed;
     &__body {
         margin-top: 27px;
 
-        &__countdown {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 56px;
-        }
-
         &__carousel {
             text-align: center;
         }
@@ -47,24 +41,5 @@ $dosiBlue : #2942ed;
             border-radius: 100px;
             border: 1px solid black;
         }
-    }
-}
-
-.countdown__card {
-    text-align: center;
-    margin-left: 12px;
-    background-color: black;
-    padding : 20px 16px 14px 16px;
-    border-radius: 16px;
-
-    &__body {
-        font-size: 42px;
-        margin-bottom: 4px;
-        font-weight: 700;
-    }
-
-    &__footer {
-        font-size: 14px;
-        opacity: 0.5;
     }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Countdown from "../Countdown";
 
 import "../../stylesheets/WeeklyAdventure.scss";
 
@@ -15,24 +16,7 @@ function WeeklyAdventure() {
         </p>
       </div>
       <div className="weekly-adventure__body">
-        <div className="weekly-adventure__body__countdown">
-          <div className="countdown__card">
-            <div className="countdown__card__body">04</div>
-            <div className="countdown__card__footer">Day</div>
-          </div>
-          <div className="countdown__card">
-            <div className="countdown__card__body">03</div>
-            <div className="countdown__card__footer">Hour</div>
-          </div>
-          <div className="countdown__card">
-            <div className="countdown__card__body">37</div>
-            <div className="countdown__card__footer">Minute</div>
-          </div>
-          <div className="countdown__card">
-            <div className="countdown__card__body">23</div>
-            <div className="countdown__card__footer">Second</div>
-          </div>
-        </div>
+        <Countdown />
         <div className="weekly-adventure__body__carousel">Carousel</div>
       </div>
       <div className="weekly-adventure__footer">
