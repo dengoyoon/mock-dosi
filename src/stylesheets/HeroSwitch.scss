@@ -1,0 +1,49 @@
+@import './variables.scss';
+
+.hero-switch {
+    list-style: none;
+    display: flex;
+    width: 290px;
+    margin-bottom: 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.1);
+    padding: 6px;
+    border-radius: 200px;
+    font-size: 19px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+
+    li {
+        flex: 1;
+        display: flex;
+
+        a {
+            flex: 1;
+            padding: 10px 17px;
+            border-radius: 200px;
+        }
+    }
+
+    .on-adventure {
+        background-color: white;
+        color: $dosiBlue;
+    }
+
+    .off-adventure {
+        background-color: transparent;
+        color: #949494;
+    }
+
+    .on-giftbox {
+        background-color: black;
+        color: white;
+    }
+
+    .off-giftbox {
+        background-color: transparent;
+        color: white;
+    }
+}
+

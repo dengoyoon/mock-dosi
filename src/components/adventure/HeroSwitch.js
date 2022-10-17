@@ -1,12 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "../../stylesheets/HeroSwitch.scss";
 
 function HeroSwitch() {
   return (
     <ul className="hero-switch">
-      <li>dd</li>
+      <li>
+        <NavLink
+          to="/adventure"
+          end
+          className={({ isActive }) =>
+            isActive ? "on-adventure" : "off-adventure"
+          }
+        >
+          Adventure
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/adventure/giftbox"
+          className={({ isActive }) =>
+            isActive ? "on-giftbox" : "off-giftbox"
+          }
+        >
+          Gift Box
+        </NavLink>
+      </li>
     </ul>
   );
 }

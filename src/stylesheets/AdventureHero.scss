@@ -1,3 +1,7 @@
+@import './variables.scss';
+
 .adventure-hero {
     padding-top: 200px;
+    background-color: $dosiBlue;
+    padding: 150px 0 100px 0;
 }
