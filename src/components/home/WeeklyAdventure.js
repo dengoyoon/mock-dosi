@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Countdown from "../Countdown";
+import Countdown from "../countdown/Countdown";
 
 import "../../stylesheets/WeeklyAdventure.scss";
 
