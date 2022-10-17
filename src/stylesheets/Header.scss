@@ -6,6 +6,10 @@
     padding: 0 60px;
     color: black;
     z-index: 2;
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+    box-shadow: none;
+    transition: color 0ms ease-in-out,background-color 0ms ease-in-out;
 }
 
 .header-nav {
