@@ -1,5 +1,5 @@
+@import './_variables.scss';
 $welcomeHeight : 650px;
-$buttonColor : #2942ed;
 
 .welcome {
     height: $welcomeHeight;
@@ -30,7 +30,7 @@ $buttonColor : #2942ed;
             font-size: 20px;
             font-weight: 600;
             color: white;
-            background-color: $buttonColor;
+            background-color: $dosiBlue;
             border-radius: 100px;
             border: 0;
         }
