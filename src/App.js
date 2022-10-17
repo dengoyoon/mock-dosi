@@ -1,9 +1,9 @@
 import React from "react";
-import Home from "./Home";
+import Home from "./components/home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Adventure from "./Adventure";
-import Membership from "./Membership";
-import GiftBox from "./GiftBox";
+import Adventure from "./components/adventure/Adventure";
+import Membership from "./components/membership/Membership";
+import GiftBox from "./components/giftbox/GiftBox";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FAQ from "./components/home/FAQ";
-import HowToEnjoy from "./components/home/HowToEnjoy";
-import WeeklyAdventure from "./components/home/WeeklyAdventure";
-import Welcome from "./components/home/Welcome";
+import FAQ from "./FAQ";
+import HowToEnjoy from "./HowToEnjoy";
+import WeeklyAdventure from "./WeeklyAdventure";
+import Welcome from "./Welcome";
 
-import "./stylesheets/Home.scss";
+import "../../stylesheets/Home.scss";
 
 function Home() {
   return (
