@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "../../stylesheets/InternalNavBar.scss";
 
@@ -7,29 +7,39 @@ function InternalNavBar() {
   return (
     <ul className="navbar">
       <li className="navbar__item">
-        <Link className="active" to="/">
+        <NavLink
+          end
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
           <span>Home</span>
-        </Link>
+        </NavLink>
       </li>
       <li className="navbar__item">
-        <Link to="/adventure">
+        <NavLink
+          to="/adventure"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
           <span>Adventure</span>
-        </Link>
+        </NavLink>
       </li>
       <li className="navbar__item">
-        <Link to="/membership">
+        <NavLink
+          to="/membership"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
           <span>Citizen Membership</span>
-        </Link>
+        </NavLink>
       </li>
       <li className="navbar__item">
-        <Link>
+        <NavLink to="/notice">
           <span>Notice</span>
-        </Link>
+        </NavLink>
       </li>
       <li className="navbar__item">
-        <Link>
+        <NavLink to="/marketplace">
           <span>Marketplace</span>
-        </Link>
+        </NavLink>
       </li>
     </ul>
   );

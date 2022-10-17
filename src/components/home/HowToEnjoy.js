@@ -26,7 +26,7 @@ function HowToEnjoy() {
             </Link>
           </li>
           <li>
-            <Link to="/giftbox">
+            <Link to="/adventure/giftbox">
               <div className="card">
                 <img className="card__image" src={ic_giftbox} />
                 <h5 className="card__header">Citizen 혜택 받기</h5>

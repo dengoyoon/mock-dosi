@@ -14,10 +14,10 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route exact path="/" element={<Home />}></Route>
         <Route path="/adventure" element={<Adventure />}></Route>
         <Route path="/membership" element={<Membership />}></Route>
-        <Route path="/giftbox" element={<GiftBox />}></Route>
+        <Route path="/adventure/giftbox" element={<GiftBox />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
