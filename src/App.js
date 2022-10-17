@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Adventure from "./Adventure";
 import Membership from "./Membership";
 import GiftBox from "./GiftBox";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 import "./stylesheets/App.scss";
 
