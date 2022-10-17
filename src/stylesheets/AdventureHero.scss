@@ -4,4 +4,28 @@
     padding-top: 200px;
     background-color: $dosiBlue;
     padding: 150px 0 100px 0;
+    text-align: center;
+    color: white;
+
+    &__header {
+        &__title {
+            font-size: 64px;
+        }
+
+        &__description {
+            opacity: 0.8;
+            font-size: 20px;
+            margin-bottom: 16px;
+            margin-top: 14px;
+        }
+
+        &__schedule {
+            opacity: 0.7;
+            font-size: 20px;
+        }
+    }
+
+    &__body {
+        margin-top: 27px;
+    }
 }
