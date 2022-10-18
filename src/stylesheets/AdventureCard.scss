@@ -7,7 +7,7 @@
         position: relative;
     }
 
-    &__header {
+    &__adventure-header, &__home-header {
         width: 100%;
         height: 100%;
         top: 0;
@@ -21,7 +21,9 @@
             height: 100%;
             object-fit: cover;
         }
+    }
 
+    &__adventure-header {
         &::after {
             content: "";
             position: absolute;

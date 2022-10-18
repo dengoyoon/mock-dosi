@@ -37,6 +37,7 @@ function AdventureHero() {
                 imgUrl={IMG_LINK.moonBird}
                 head="Moonbirds #4486"
                 small="1명 추첨"
+                isVisibleBody={true}
               />
             </li>
             <li>
@@ -44,6 +45,7 @@ function AdventureHero() {
                 imgUrl={IMG_LINK.meeBits}
                 head="Meebits #15350"
                 small="1명 추첨"
+                isVisibleBody={true}
               />
             </li>
             <li>
@@ -51,6 +53,7 @@ function AdventureHero() {
                 imgUrl={IMG_LINK.cryptoAdz}
                 head="Cryptoads #1347"
                 small="1명 추첨"
+                isVisibleBody={true}
               />
             </li>
             <li>
@@ -58,6 +61,7 @@ function AdventureHero() {
                 imgUrl={IMG_LINK.diaTv}
                 head="DIA TV"
                 small="25명 추첨"
+                isVisibleBody={true}
               />
             </li>
             <li>
@@ -65,6 +69,7 @@ function AdventureHero() {
                 imgUrl={IMG_LINK.hellBound}
                 head="Hellbound"
                 small="50명 추첨"
+                isVisibleBody={true}
               />
             </li>
             <li>
@@ -72,6 +77,7 @@ function AdventureHero() {
                 imgUrl={IMG_LINK.dosiCitizen}
                 head="DOSI Citizen"
                 small="30000명 추첨"
+                isVisibleBody={true}
               />
             </li>
           </ul>
