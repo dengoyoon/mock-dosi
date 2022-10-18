@@ -27,5 +27,18 @@
 
     &__body {
         margin-top: 27px;
+
+        &__card-grid {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                width: calc(100%/3);
+                flex: 0 0 calc(100%/3);
+                padding: 20px 0 0 20px;
+                box-sizing: border-box;
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import HeroSwitch from "./HeroSwitch";
 import Countdown from "../countdown/Countdown";
+import { IMG_LINK } from "../../img/link";
+import AdventureCard from "./AdventureCard";
 
 import "../../stylesheets/AdventureHero.scss";
 
@@ -28,6 +30,51 @@ function AdventureHero() {
         </div>
         <div className="adventure-hero__body">
           <Countdown />
+          <ul className="adventure-hero__body__card-grid">
+            <li>
+              {" "}
+              <AdventureCard
+                imgUrl={IMG_LINK.moonBird}
+                head="Moonbirds #4486"
+                small="1명 추첨"
+              />
+            </li>
+            <li>
+              <AdventureCard
+                imgUrl={IMG_LINK.meeBits}
+                head="Meebits #15350"
+                small="1명 추첨"
+              />
+            </li>
+            <li>
+              <AdventureCard
+                imgUrl={IMG_LINK.cryptoAdz}
+                head="Cryptoads #1347"
+                small="1명 추첨"
+              />
+            </li>
+            <li>
+              <AdventureCard
+                imgUrl={IMG_LINK.diaTv}
+                head="DIA TV"
+                small="25명 추첨"
+              />
+            </li>
+            <li>
+              <AdventureCard
+                imgUrl={IMG_LINK.hellBound}
+                head="Hellbound"
+                small="50명 추첨"
+              />
+            </li>
+            <li>
+              <AdventureCard
+                imgUrl={IMG_LINK.dosiCitizen}
+                head="DOSI Citizen"
+                small="30000명 추첨"
+              />
+            </li>
+          </ul>
         </div>
         <div className="adventure-hero__footer"></div>
       </div>
