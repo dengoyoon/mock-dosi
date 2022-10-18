@@ -1,0 +1,47 @@
+.membership-level-card {
+    padding: 16px;
+    background-color: white;
+    border-radius: 20px;
+
+    &__content {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 200px;
+            height: 200px;
+            margin-right: 40px;
+        }
+
+        &__body {
+            flex: 1;
+
+            &__level {
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            &__name {
+                font-size: 32px;
+                font-weight: 700;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .sand {
+        color: rgb(191, 163, 135);
+    }
+
+    .lavender {
+        color: rgb(136, 97, 194);
+    }
+
+    .melon {
+        color: rgb(77, 178, 131);
+    }
+
+    .sky {
+        color: rgb(76, 151, 204);
+    }
+}
