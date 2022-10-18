@@ -87,7 +87,7 @@ function AdventureHero() {
         <div className="adventure-hero__footer">
           <button className="adventure-hero__footer__btn-participate">
             <div className="adventure-hero__footer__btn-participate__content">
-              <img src={ic_coin}></img>
+              <img src={ic_coin} />
               <span>100DON 내고 참여하기</span>
             </div>
           </button>
