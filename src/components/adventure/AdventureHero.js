@@ -4,6 +4,8 @@ import Countdown from "../countdown/Countdown";
 import { IMG_LINK } from "../../img/link";
 import AdventureCard from "./AdventureCard";
 
+import ic_coin from "../../img/ic_coin.png";
+
 import "../../stylesheets/AdventureHero.scss";
 
 function AdventureHero() {
@@ -82,7 +84,14 @@ function AdventureHero() {
             </li>
           </ul>
         </div>
-        <div className="adventure-hero__footer"></div>
+        <div className="adventure-hero__footer">
+          <button className="adventure-hero__footer__btn-participate">
+            <div className="adventure-hero__footer__btn-participate__content">
+              <img src={ic_coin}></img>
+              <span>100DON 내고 참여하기</span>
+            </div>
+          </button>
+        </div>
       </div>
     </section>
   );
