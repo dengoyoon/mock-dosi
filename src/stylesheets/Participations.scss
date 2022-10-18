@@ -26,14 +26,14 @@
             margin-top: 20px;
         }
 
+        h5 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
         .adventure-overall-count {
             &__header {
                 margin-bottom: 30px;
-                
-                h5 {
-                    font-size: 32px;
-                    font-weight: 700;
-                }
             }
 
             &__body {
@@ -52,6 +52,19 @@
                     &:nth-child(n+2) {
                         margin-left: 9px;
                     }
+                }
+            }
+        }
+
+        .adventure-progress {
+            &__header {
+                h5 {
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    font-size: 20px;
+                    opacity: .8;
                 }
             }
         }
