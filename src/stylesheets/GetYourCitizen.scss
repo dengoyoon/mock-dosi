@@ -1,0 +1,35 @@
+@import './variables.scss';
+
+.get-your-citizen {
+    padding : 100px 0;
+    text-align: center;
+
+    &__header {
+        img {
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    &__body {
+        margin-top: 5px;
+        h4 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+    }
+
+    &__footer {
+        margin-top: 29px;
+
+        button {
+            background-color: $dosiBlue;
+            color: white;
+            padding: 20px 36px;
+            border: 0;
+            border-radius: 100px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+}
