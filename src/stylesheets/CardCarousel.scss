@@ -1,0 +1,31 @@
+@mixin button() {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+  
+
+.card-carousel {
+    position: relative;
+
+    .swiper-button-prev {
+        @include button();
+        left: 0;
+        transform: rotate(180deg) translateX(50%) translateY(50%);
+    }
+
+    .swiper-button-next {
+        @include button();
+        right: 0;
+        transform: translateX(50%) translateY(-50%);
+    }
+}
