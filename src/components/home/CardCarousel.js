@@ -11,6 +11,12 @@ import "../../stylesheets/CardCarousel.scss";
 
 function CardCarousel() {
   const [swiper, setSwiper] = useState({});
+  const pagination = {
+    clickable: true,
+    renderBullet: function (className) {
+      return `<span class="${className}"></span>`;
+    },
+  };
   return (
     <div className="card-carousel">
       <Swiper
@@ -21,7 +27,7 @@ function CardCarousel() {
         onInit={(ev) => {
           setSwiper(ev);
         }}
-        pagination={{ clickable: true }}
+        pagination={pagination}
       >
         <SwiperSlide>
           <AdventureCard

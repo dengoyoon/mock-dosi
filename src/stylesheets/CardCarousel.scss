@@ -28,4 +28,24 @@
         right: 0;
         transform: translateX(50%) translateY(-50%);
     }
+
+    .swiper-pagination {
+        display: block;
+        position: static;
+        margin-top: 12px;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: white;
+        opacity: 0.3;
+        width: 6px;
+        height: 6px;
+        transition: width 0.25s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 40px;
+        opacity: 0.6;
+        border-radius: 6px;
+    }
 }
