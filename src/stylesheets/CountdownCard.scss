@@ -1,9 +1,12 @@
 .countdown__card {
     text-align: center;
-    margin-left: 12px;
     background-color: black;
     padding : 20px 16px 14px 16px;
     border-radius: 16px;
+
+    &:nth-child(n+2) {
+        margin-left: 12px;
+    }
 
     &__body {
         font-size: 42px;

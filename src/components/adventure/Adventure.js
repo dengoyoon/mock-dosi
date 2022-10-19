@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import AdventureHero from "./AdventureHero";
+import HowToParticipate from "./HowToParticipate";
+import Participations from "./Participations";
 
 function Adventure() {
   return (
     <div className="adventure">
-      <div>Adventure</div>
+      <AdventureHero />
+      <Participations />
+      <HowToParticipate />
     </div>
   );
 }

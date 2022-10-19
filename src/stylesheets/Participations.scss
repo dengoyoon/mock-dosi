@@ -1,0 +1,74 @@
+.participations {
+    padding-top: 100px;
+
+    &__card {
+        padding: 58px 70px;
+        border-radius: 12px;
+        position: relative;
+        text-align: center;
+
+        .container {
+            max-width: 680px;
+        }
+
+        &::after {
+            position: absolute;
+            border-radius: 12px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 1px 20px;
+            top: 0;
+            content: "";
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        &:nth-child(n+2) {
+            margin-top: 20px;
+        }
+
+        h5 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .adventure-overall-count {
+            &__header {
+                margin-bottom: 30px;
+            }
+
+            &__body {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+            
+                li {
+                    padding: 9px 14px;
+                    background-color: black;
+                    color: white;
+                    font-size: 50px;
+                    font-weight: 700;
+                    border-radius: 12px;
+
+                    &:nth-child(n+2) {
+                        margin-left: 9px;
+                    }
+                }
+            }
+        }
+
+        .adventure-progress {
+            &__header {
+                h5 {
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    font-size: 20px;
+                    opacity: .8;
+                }
+            }
+        }
+    }
+
+    
+}

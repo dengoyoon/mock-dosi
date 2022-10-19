@@ -1,0 +1,63 @@
+.giftbox {
+    padding: 150px 0 100px 0;
+
+    &__header {
+        text-align: center;
+        h4 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 13px;
+        }
+
+        p {
+            font-size: 20px;
+            opacity: 0.5;
+        }
+    }
+
+    &__body {
+        margin-top: 36px;
+
+        .my-don {
+            max-width: 375px;
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            box-sizing: border-box;
+
+            &__label {
+                font-size: 16px;
+                flex: 1;
+                line-height: 1.2;
+            }
+
+            &__coin {
+                margin-right: 4px;
+            }
+
+            &__point {
+                font-size: 18px;
+                font-weight: 700;
+                margin-right: 4px;
+            }
+        }
+
+        &__event-card-list {
+            display: flex;
+            margin-top: 100px;
+            list-style: none;
+
+            li {
+                flex: 1;
+                width: 50%;
+
+                &:nth-child(n+2) {
+                    margin-left: 19px;
+                }
+            }
+        }
+    }
+}
