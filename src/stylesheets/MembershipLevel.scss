@@ -1,0 +1,29 @@
+@import './variables.scss';
+
+.membership-level {
+    padding: 100px 0;
+    background-color: $backgroundGrey;
+
+    &__header {
+        text-align: center;
+        margin-bottom: 56px;
+
+        h4 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+    }
+
+    &__body {
+        &__card-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+
+            li {
+                padding: 17px 0 0 20px;
+            }
+        }
+    }
+}

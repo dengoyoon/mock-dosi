@@ -1,0 +1,76 @@
+@import './variables.scss';
+
+.how-to-level-up {
+    padding: 100px 0;
+    .container {
+        max-width: 940px;
+    }
+
+    &__header {
+        margin-bottom: 56px;
+        text-align: center;
+
+        h4 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        &__requirement {
+            margin-top: 13px;
+            font-size: 20px;
+            opacity: 0.5;
+        }
+
+        &__coming-soon {
+            margin-top: 8px;
+            font-size: 16px;
+            opacity: 0.3;
+        }
+    }
+
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__item {
+            text-align: center;
+            &__img-box {
+                border-radius: 20px;
+                padding: 70px;
+                background-color: $backgroundGrey;
+
+                img {
+                    width: 240px;
+                    height: 240px;
+                }
+            }
+
+            &__description {
+                font-size: 24px;
+                font-weight: 700;
+                margin-top: 29px;
+            }
+        }
+
+        &__plus {
+            padding-bottom: 60px;
+            margin: 0 60px;
+
+            &__frame {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50px;
+                background-color: $backgroundGrey;
+                width: 60px;
+                height: 60px;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}

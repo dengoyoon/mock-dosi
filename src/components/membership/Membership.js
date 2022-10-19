@@ -1,10 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import GetYourCitizen from "./GetYourCitizen";
+import HowToLevelUp from "./HowToLevelUp";
+import MembershipBenefit from "./MembershipBenefit";
+import MembershipLevel from "./MembershipLevel";
 
 function Membership() {
   return (
     <div className="membership">
-      <div>Citizen Membership</div>
+      <GetYourCitizen />
+      <MembershipLevel />
+      <HowToLevelUp />
+      <MembershipBenefit />
     </div>
   );
 }
