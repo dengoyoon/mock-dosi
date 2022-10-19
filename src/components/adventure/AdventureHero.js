@@ -34,7 +34,6 @@ function AdventureHero() {
           <Countdown />
           <ul className="adventure-hero__body__card-grid">
             <li>
-              {" "}
               <AdventureCard
                 imgUrl={IMG_LINK.moonBird}
                 head="Moonbirds #4486"
