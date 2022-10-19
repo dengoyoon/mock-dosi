@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Countdown from "../countdown/Countdown";
 
 import "../../stylesheets/WeeklyAdventure.scss";
+import CardCarousel from "./CardCarousel";
 
 function WeeklyAdventure() {
   return (
@@ -17,7 +18,9 @@ function WeeklyAdventure() {
       </div>
       <div className="weekly-adventure__body">
         <Countdown />
-        <div className="weekly-adventure__body__carousel">Carousel</div>
+        <div className="weekly-adventure__body__carousel">
+          <CardCarousel />
+        </div>
       </div>
       <div className="weekly-adventure__footer">
         <Link to="/adventure">
