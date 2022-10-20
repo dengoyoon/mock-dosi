@@ -39,18 +39,22 @@ function AdventureCard({ imgUrl, head, small, isVisibleBody }) {
           </>
         )}
       </div>
-      {
-        <ReactModal
-          isOpen={showModal}
-          contentLabel="Minimal Modal Example"
-          onRequestClose={handleCloseModal}
-          appElement={document.querySelector("body")}
-        >
-          <button type="button" onClick={handleCloseModal}>
-            Close
-          </button>
-        </ReactModal>
-      }
+      <ReactModal
+        isOpen={showModal}
+        contentLabel="Minimal Modal Example"
+        onRequestClose={handleCloseModal}
+        appElement={document.querySelector("body")}
+        className="adventure-card-modal"
+        overlayClassName="adventure-card-modal-overlay"
+      >
+        <div className="adventure-card-modal__img-frame">
+          <img src={imgUrl} />
+        </div>
+        <div className="adventure-card-modal__body">
+          <h5>{head}</h5>
+        </div>
+        <button type="button" onClick={handleCloseModal}></button>
+      </ReactModal>
     </div>
   );
 }
