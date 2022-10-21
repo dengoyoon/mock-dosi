@@ -3,14 +3,14 @@ import ExternalNavBar from "./ExternalNavBar";
 import InternalNavBar from "./InternalNavBar";
 import { Link } from "react-router-dom";
 import { headerState } from "../../store";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
 import "../../stylesheets/Header.scss";
 
 const getDarkClassName = (isDark) => (isDark ? "dark" : "");
 
 function Header() {
-  const [header, setHeader] = useRecoilState(headerState);
+  const header = useRecoilValue(headerState);
 
   return (
     <header className={"header " + getDarkClassName(header.isDark)}>

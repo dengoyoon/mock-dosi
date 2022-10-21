@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import FAQ from "./FAQ";
 import HowToEnjoy from "./HowToEnjoy";
 import WeeklyAdventure from "./WeeklyAdventure";
@@ -9,12 +9,32 @@ import { headerState } from "../../store";
 import "../../stylesheets/Home.scss";
 
 function Home() {
+  const homeElement = useRef(null);
   const setHeaderState = useSetRecoilState(headerState);
-  setHeaderState({ isDark: true });
+
+  useEffect(() => {
+    if (!homeElement.current) return;
+
+    const io = new IntersectionObserver((entries, observer) => {
+      if (entries[0].isIntersecting) {
+        setHeaderState({ isDark: true });
+      } else {
+        setHeaderState({ isDark: false });
+      }
+    });
+    io.observe(homeElement.current);
+
+    return () => {
+      io.disconnect();
+    };
+  });
+
   return (
     <div className="home">
-      <Welcome />
-      <WeeklyAdventure />
+      <div ref={homeElement}>
+        <Welcome />
+        <WeeklyAdventure />
+      </div>
       <HowToEnjoy />
       <FAQ />
     </div>

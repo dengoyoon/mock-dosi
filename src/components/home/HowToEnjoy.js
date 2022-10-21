@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { headerState } from "../../store";
 
 import "../../stylesheets/HowToEnjoy.scss";
 import ic_crown_man from "../../img/ic_crown_man.png";
@@ -8,7 +10,7 @@ import ic_rocket from "../../img/ic_rocket.png";
 
 function HowToEnjoy() {
   return (
-    <div className="how-to-enjoy">
+    <section className="how-to-enjoy">
       <div className="how-to-enjoy__header">
         <h4>Citizen World를 즐기는 방법</h4>
       </div>
@@ -49,7 +51,7 @@ function HowToEnjoy() {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 }
 
