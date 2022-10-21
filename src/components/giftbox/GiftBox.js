@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HeroSwitch from "../adventure/HeroSwitch";
 import EventCard from "./EventCard";
+import { useSetRecoilState } from "recoil";
+import { headerState } from "../../store";
 
 import ic_attendence from "../../img/ic_attendence.png";
 import ic_sliced_three_men from "../../img/ic_sliced_three_men.png";
@@ -9,6 +11,8 @@ import ic_sliced_three_men from "../../img/ic_sliced_three_men.png";
 import "../../stylesheets/GiftBox.scss";
 
 function GiftBox() {
+  const setHeaderState = useSetRecoilState(headerState);
+  setHeaderState({ isDark: false });
   return (
     <section className="giftbox">
       <div className="container flex justify-content-center">
