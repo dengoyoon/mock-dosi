@@ -90,6 +90,7 @@ function Header() {
           <ExternalNavBar />
         </nav>
       </div>
+      <div id="header-sticky-portal"></div>
     </header>
   );
 }
