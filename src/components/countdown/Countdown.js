@@ -29,7 +29,7 @@ const initialRemainderPeriod = go(
   getObjectRemainderPeriod
 );
 
-function Countdown() {
+function Countdown({ isInHeader }) {
   const [remainderPeriod, setRemainderPeriod] = useState(
     initialRemainderPeriod
   );
@@ -53,11 +53,27 @@ function Countdown() {
   */
 
   return (
-    <div className="countdown">
-      <CountdownCard number={remainderPeriod.day} label="Day" />
-      <CountdownCard number={remainderPeriod.hour} label="Hour" />
-      <CountdownCard number={remainderPeriod.minute} label="Minute" />
-      <CountdownCard number={remainderPeriod.second} label="Second" />
+    <div className={isInHeader ? "header-countdown" : "countdown"}>
+      <CountdownCard
+        number={remainderPeriod.day}
+        label="Day"
+        isInHeader={isInHeader}
+      />
+      <CountdownCard
+        number={remainderPeriod.hour}
+        label="Hour"
+        isInHeader={isInHeader}
+      />
+      <CountdownCard
+        number={remainderPeriod.minute}
+        label="Minute"
+        isInHeader={isInHeader}
+      />
+      <CountdownCard
+        number={remainderPeriod.second}
+        label="Second"
+        isInHeader={isInHeader}
+      />
     </div>
   );
 }

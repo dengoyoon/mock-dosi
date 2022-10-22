@@ -11,7 +11,7 @@ const HeaderStickyPortal = () =>
       <div className="container flex align-items-center">
         <div className="header-sticky-portal__countdown">
           <h5>Adventure 종료까지 남은 시간</h5>
-          <Countdown />
+          <Countdown isInHeader={true} />
         </div>
         <ParticipationButton />
       </div>

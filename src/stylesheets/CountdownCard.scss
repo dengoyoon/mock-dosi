@@ -20,3 +20,15 @@
         opacity: 0.5;
     }
 }
+
+.header-countdown__card {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: black;
+    &:nth-child(n+2) {
+        &::before {
+            content: ":";
+        }
+    }
+}
