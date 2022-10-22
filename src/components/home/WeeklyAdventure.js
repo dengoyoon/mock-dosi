@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Countdown from "../countdown/Countdown";
+import CardCarousel from "./CardCarousel";
 
 import "../../stylesheets/WeeklyAdventure.scss";
-import CardCarousel from "./CardCarousel";
 
 function WeeklyAdventure() {
   return (

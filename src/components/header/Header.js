@@ -2,12 +2,18 @@ import React from "react";
 import ExternalNavBar from "./ExternalNavBar";
 import InternalNavBar from "./InternalNavBar";
 import { Link } from "react-router-dom";
+import { headerState } from "../../store";
+import { useRecoilValue } from "recoil";
 
 import "../../stylesheets/Header.scss";
 
+const getDarkClassName = (isDark) => (isDark ? "dark" : "");
+
 function Header() {
+  const header = useRecoilValue(headerState);
+
   return (
-    <header className="header dark">
+    <header className={"header " + getDarkClassName(header.isDark)}>
       <div className="header-nav">
         <div className="header-aside-left">
           <Link to="/">

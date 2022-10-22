@@ -8,7 +8,7 @@ import ic_rocket from "../../img/ic_rocket.png";
 
 function HowToEnjoy() {
   return (
-    <div className="how-to-enjoy">
+    <section className="how-to-enjoy">
       <div className="how-to-enjoy__header">
         <h4>Citizen World를 즐기는 방법</h4>
       </div>
@@ -49,7 +49,7 @@ function HowToEnjoy() {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 }
 
