@@ -13,7 +13,7 @@ const HeaderStickyPortal = () =>
           <h5>Adventure 종료까지 남은 시간</h5>
           <Countdown isInHeader={true} />
         </div>
-        <ParticipationButton />
+        <ParticipationButton isInHeader={true} />
       </div>
     </div>,
     document.querySelector("#header-sticky-portal")
