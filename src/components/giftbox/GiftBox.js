@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import HeroSwitch from "../adventure/HeroSwitch";
 import EventCard from "./EventCard";
@@ -12,7 +12,11 @@ import "../../stylesheets/GiftBox.scss";
 
 function GiftBox() {
   const setHeaderState = useSetRecoilState(headerState);
-  setHeaderState({ isDark: false });
+
+  useEffect(() => {
+    setHeaderState({ isDark: false });
+  });
+
   return (
     <section className="giftbox">
       <div className="container flex justify-content-center">

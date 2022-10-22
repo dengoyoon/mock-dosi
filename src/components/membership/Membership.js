@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GetYourCitizen from "./GetYourCitizen";
 import HowToLevelUp from "./HowToLevelUp";
 import MembershipBenefit from "./MembershipBenefit";
@@ -8,7 +8,11 @@ import { headerState } from "../../store";
 
 function Membership() {
   const setHeaderState = useSetRecoilState(headerState);
-  setHeaderState({ isDark: false });
+
+  useEffect(() => {
+    setHeaderState({ isDark: false });
+  });
+
   return (
     <div className="membership">
       <GetYourCitizen />
