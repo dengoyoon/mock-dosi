@@ -1,20 +1,43 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import HeroSwitch from "./HeroSwitch";
 import Countdown from "../countdown/Countdown";
 import { IMG_LINK } from "../../img/link";
 import AdventureCard from "./AdventureCard";
+import { useSetRecoilState } from "recoil";
+import { headerState } from "../../store";
 
 import ic_coin from "../../img/ic_coin.png";
 
 import "../../stylesheets/AdventureHero.scss";
 
 function AdventureHero() {
+  const adventureHeroElement = useRef(null);
+  const setHeaderState = useSetRecoilState(headerState);
+
+  // 잠깐 : 리액트 훅 순서대로 써야하는거 뭔말인지 물어보기
+  useEffect(() => {
+    if (!adventureHeroElement.current) return;
+
+    const io = new IntersectionObserver((entries, observer) => {
+      if (entries[0].isIntersecting) {
+        setHeaderState({ isDark: true });
+      } else {
+        setHeaderState({ isDark: false });
+      }
+    });
+    io.observe(adventureHeroElement.current);
+
+    return () => {
+      io.disconnect();
+    };
+  });
+
   return (
     <section className="adventure-hero">
       <div className="container flex justify-content-center">
         <HeroSwitch />
       </div>
-      <div className="container">
+      <div className="container" ref={adventureHeroElement}>
         <div className="adventure-hero__header">
           <h3 className="adventure-hero__header__title">Weekly Adventure</h3>
           <div className="adventure-hero__header__description">

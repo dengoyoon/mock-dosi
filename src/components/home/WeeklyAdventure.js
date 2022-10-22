@@ -1,8 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Countdown from "../countdown/Countdown";
-import { useSetRecoilState } from "recoil";
-import { headerState } from "../../store";
 import CardCarousel from "./CardCarousel";
 
 import "../../stylesheets/WeeklyAdventure.scss";

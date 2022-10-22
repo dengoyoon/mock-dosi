@@ -1,7 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useSetRecoilState } from "recoil";
-import { headerState } from "../../store";
 
 import "../../stylesheets/HowToEnjoy.scss";
 import ic_crown_man from "../../img/ic_crown_man.png";
