@@ -1,0 +1,11 @@
+.header-sticky-portal {
+    padding-bottom: 20px;
+
+    &__countdown {
+        flex: 1;
+
+        h5 {
+            opacity: 0.3;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 .countdown__card {
     text-align: center;
     background-color: black;
+    color: white;
     padding : 20px 16px 14px 16px;
     border-radius: 16px;
 
@@ -17,5 +18,17 @@
     &__footer {
         font-size: 14px;
         opacity: 0.5;
+    }
+}
+
+.header-countdown__card {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: black;
+    &:nth-child(n+2) {
+        &::before {
+            content: ":";
+        }
     }
 }

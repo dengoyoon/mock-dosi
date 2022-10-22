@@ -3,16 +3,18 @@ import HeroSwitch from "./HeroSwitch";
 import Countdown from "../countdown/Countdown";
 import { IMG_LINK } from "../../img/link";
 import AdventureCard from "./AdventureCard";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { headerState } from "../../store";
+import HeaderStickyPortal from "../header/HeaderStickyPortal";
 
 import ic_coin from "../../img/ic_coin.png";
 
 import "../../stylesheets/AdventureHero.scss";
+import ParticipationButton from "./ParticipationButton";
 
 function AdventureHero() {
   const adventureHeroElement = useRef(null);
-  const setHeaderState = useSetRecoilState(headerState);
+  const [header, setHeaderState] = useRecoilState(headerState);
 
   // 잠깐 : 리액트 훅 순서대로 써야하는거 뭔말인지 물어보기
   useEffect(() => {
@@ -23,6 +25,7 @@ function AdventureHero() {
         setHeaderState({ isDark: true });
       } else {
         setHeaderState({ isDark: false });
+        <HeaderStickyPortal />;
       }
     });
     io.observe(adventureHeroElement.current);
@@ -107,14 +110,10 @@ function AdventureHero() {
           </ul>
         </div>
         <div className="adventure-hero__footer">
-          <button className="adventure-hero__footer__btn-participate">
-            <div className="adventure-hero__footer__btn-participate__content">
-              <img src={ic_coin} />
-              <span>100DON 내고 참여하기</span>
-            </div>
-          </button>
+          <ParticipationButton />
         </div>
       </div>
+      {!header.isDark && <HeaderStickyPortal />}
     </section>
   );
 }
