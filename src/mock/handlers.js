@@ -8,7 +8,7 @@ export const handlers = [
   rest.get("/user", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(userProfile));
   }),
-  rest.get("/weekly-accumulate-count", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(weeklyDosiInfo.participationAccCount));
+  rest.get("/weekly-dosi-info", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(weeklyDosiInfo));
   }),
 ];

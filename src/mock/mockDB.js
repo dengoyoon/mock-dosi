@@ -48,7 +48,7 @@ const userProfile = {
 };
 
 const weeklyDosiInfo = {
-  participationAccCount: 14376,
+  participationAccCount: 19376,
 };
 
 export { adventureNFTs, userProfile, weeklyDosiInfo };

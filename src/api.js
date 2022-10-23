@@ -1,7 +1,6 @@
 const getUser = async () => {
-  const res = await fetch("/user").then((res) => {
-    return res.json();
-  });
+  const response = await fetch("/user");
+  return response.json();
 };
 
 const getAdventureNFTs = async () => {
@@ -9,10 +8,9 @@ const getAdventureNFTs = async () => {
   return response.json();
 };
 
-const getWeeklyAccumulateCount = async () => {
-  const res = await fetch("/weekly-accumulate-count").then((res) => {
-    return res.json();
-  });
+const getWeeklyDosiInfo = async () => {
+  const response = await fetch("/weekly-dosi-info");
+  return response.json();
 };
 
-export { getUser, getAdventureNFTs, getWeeklyAccumulateCount };
+export { getUser, getAdventureNFTs, getWeeklyDosiInfo };
