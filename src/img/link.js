@@ -13,4 +13,13 @@ const IMG_LINK = {
     "https://obs.line-scdn.net/0hFuq-YXbIGVpMVAx7Xj1mDRAHBSh_JhtSM2ZIbjJVAhYHAF1nFk0Obh8VATkUBxVnKFkdXQ8VARU5D19tGU4KaQxVDhViOl1fFW9Xbg8GDjoqFBh3LGheQBk/f640x640",
 };
 
-export { IMG_LINK };
+const MY_NFT_LINK = {
+  traveler1: {
+    imgUrl:
+      "https://lbw-impro.line-apps.com/v1/daphne/token/f68e7fd5/100000010003515e",
+    videoUrl:
+      "https://lbw-impro.line-apps.com/v1/daphne/token/f68e7fd5/100000010003515e/origin",
+  },
+};
+
+export { IMG_LINK, MY_NFT_LINK };

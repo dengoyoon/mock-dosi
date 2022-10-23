@@ -1,16 +1,14 @@
 import { rest } from "msw";
-
-const todos = ["먹기", "자기", "놀기"];
+import { adventureNFTs, userProfile, weeklyDosiInfo } from "./mockDB";
 
 export const handlers = [
-  // 할일 목록
-  rest.get("/todos", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(todos));
+  rest.get("/adventure-nfts", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(adventureNFTs));
   }),
-
-  // 할일 추가
-  rest.post("/todos", (req, res, ctx) => {
-    todos.push(req.body);
-    return res(ctx.status(201));
+  rest.get("/user", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(userProfile));
+  }),
+  rest.get("/weekly-accumulate-count", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(weeklyDosiInfo.participationAccCount));
   }),
 ];
