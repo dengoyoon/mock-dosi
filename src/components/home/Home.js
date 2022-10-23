@@ -3,14 +3,15 @@ import FAQ from "./FAQ";
 import HowToEnjoy from "./HowToEnjoy";
 import WeeklyAdventure from "./WeeklyAdventure";
 import Welcome from "./Welcome";
-import { useSetRecoilState } from "recoil";
-import { headerState } from "../../store";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import { headerState, userProfileState } from "../../store";
 
 import "../../stylesheets/Home.scss";
 
 function Home() {
   const homeElement = useRef(null);
   const setHeaderState = useSetRecoilState(headerState);
+  const userProfile = useRecoilValue(userProfileState);
 
   useEffect(() => {
     if (!homeElement.current) return;
@@ -32,7 +33,7 @@ function Home() {
   return (
     <div className="home">
       <div ref={homeElement}>
-        <Welcome />
+        {userProfile.isLogin ? <div>Login</div> : <Welcome />}
         <WeeklyAdventure />
       </div>
       <HowToEnjoy />
