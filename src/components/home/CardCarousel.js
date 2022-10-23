@@ -36,7 +36,7 @@ const makeAdventureCards = (cards) => {
 
 function CardCarousel() {
   const [swiper, setSwiper] = useState({});
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([{}, {}, {}, {}, {}, {}]);
 
   const pagination = {
     clickable: true,
