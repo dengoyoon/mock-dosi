@@ -6,3 +6,10 @@ export const headerState = atom({
     isDark: true,
   },
 });
+
+export const userProfileState = atom({
+  key: "userProfile",
+  default: {
+    isLogin: false,
+  },
+});

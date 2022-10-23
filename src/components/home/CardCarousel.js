@@ -1,22 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AdventureCard from "../adventure/AdventureCard";
-import { IMG_LINK } from "../../img/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import { getAdventureNFTs } from "../../api";
+import { go } from "../../utilFunc";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
 import "../../stylesheets/CardCarousel.scss";
 
+const convertNftsToCards = (nfts) =>
+  nfts.map(
+    (nft) =>
+      new Object({
+        ...nft,
+        isVisibleBody: false,
+      })
+  );
+
+const makeAdventureCards = (cards) =>
+  cards.map((card, index) => (
+    <SwiperSlide key={index}>
+      <AdventureCard imgUrl={card.imgUrl} head={card.head} small={card.small} />
+    </SwiperSlide>
+  ));
+
 function CardCarousel() {
   const [swiper, setSwiper] = useState({});
+  const [cards, setCards] = useState([{}, {}, {}, {}, {}, {}]);
+
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
       return `<span class="${className}"></span>`;
     },
   };
+
+  useEffect(() => {
+    getAdventureNFTs().then((nfts) => {
+      go(nfts, convertNftsToCards, (cards) => setCards([...cards]));
+    });
+  }, []);
+
   return (
     <div className="card-carousel">
       <Swiper
@@ -29,48 +55,7 @@ function CardCarousel() {
         }}
         pagination={pagination}
       >
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.moonBird}
-            head="Moonbirds #4486"
-            small="1명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.meeBits}
-            head="Meebits #15350"
-            small="1명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.cryptoAdz}
-            head="Cryptoads #1347"
-            small="1명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.diaTv}
-            head="DIA TV"
-            small="25명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.hellBound}
-            head="Hellbound"
-            small="50명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.dosiCitizen}
-            head="DOSI Citizen"
-            small="30000명 추첨"
-          />
-        </SwiperSlide>
+        {makeAdventureCards(cards)}
       </Swiper>
       <button
         className="swiper-button-prev"

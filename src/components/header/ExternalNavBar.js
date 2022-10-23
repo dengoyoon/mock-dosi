@@ -1,11 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { userProfileState } from "../../store";
+import { getUser } from "../../api";
 
 import "../../stylesheets/ExternalNavBar.scss";
 
+const getConfirmForAccess = (isLogin) =>
+  isLogin
+    ? !confirm("로그아웃 하시겠습니까?")
+    : confirm("로그인 하시겠습니까?");
+
 function ExternalNavBar() {
+  const [userProfile, setUserProfile] = useRecoilState(userProfileState);
+
+  const onClickLogin = () => {
+    if (getConfirmForAccess(userProfile.isLogin)) {
+      getUser().then((userInfo) => {
+        setUserProfile({ ...userInfo, isLogin: true });
+      });
+    } else {
+      setUserProfile({ isLogin: false });
+    }
+  };
+
   return (
-    <ul className="navbar">
+    <ul className="navbar align-items-center">
       <li className="navbar__item">
         <Link>
           <svg
@@ -52,11 +72,17 @@ function ExternalNavBar() {
           </svg>
         </Link>
       </li>
-      <li className="navbar__item hide">
-        <button type="button">프로필</button>
-      </li>
+      {userProfile.isLogin ? (
+        <li className="navbar__item">
+          <button type="button">
+            <img src="https://vos.line-scdn.net/global-nft-prod/profile-image/img_profile_default_03.png" />
+          </button>
+        </li>
+      ) : (
+        ""
+      )}
       <li className="navbar__item">
-        <button type="button">
+        <button type="button" onClick={onClickLogin}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

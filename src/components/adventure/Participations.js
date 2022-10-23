@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { go } from "../../utilFunc";
+import { getWeeklyDosiInfo } from "../../api";
 
 import "../../stylesheets/Participations.scss";
 
@@ -22,7 +23,14 @@ const makeParticipateCardList = (paricipateNumber) =>
   );
 
 function Participations() {
-  const tempParicipateNumber = 19275;
+  const [weeklyAccNumber, setWeeklyAccNumber] = useState(0);
+
+  useEffect(() => {
+    getWeeklyDosiInfo().then((weeklyDosiInfo) => {
+      setWeeklyAccNumber(weeklyDosiInfo.participationAccCount);
+    });
+  });
+
   return (
     <section className="participations">
       <div className="container">
@@ -33,7 +41,7 @@ function Participations() {
                 <h5>이번주 누적 참여 횟수</h5>
               </div>
               <ul className="adventure-overall-count__body">
-                {makeParticipateCardList(tempParicipateNumber)}
+                {makeParticipateCardList(weeklyAccNumber)}
               </ul>
             </div>
           </div>
