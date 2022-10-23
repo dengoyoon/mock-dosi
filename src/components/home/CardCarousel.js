@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import { getAdventureNFTs } from "../../api";
 import { go } from "../../utilFunc";
-import { IMG_LINK } from "../../img/link";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -20,19 +19,12 @@ const convertNftsToCards = (nfts) =>
       })
   );
 
-const makeAdventureCards = (cards) => {
-  return cards.map((card, index) => {
-    return (
-      <SwiperSlide key={index}>
-        <AdventureCard
-          imgUrl={card.imgUrl}
-          head={card.head}
-          small={card.small}
-        />
-      </SwiperSlide>
-    );
-  });
-};
+const makeAdventureCards = (cards) =>
+  cards.map((card, index) => (
+    <SwiperSlide key={index}>
+      <AdventureCard imgUrl={card.imgUrl} head={card.head} small={card.small} />
+    </SwiperSlide>
+  ));
 
 function CardCarousel() {
   const [swiper, setSwiper] = useState({});
@@ -64,48 +56,6 @@ function CardCarousel() {
         pagination={pagination}
       >
         {makeAdventureCards(cards)}
-        {/* <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.moonBird}
-            head="Moonbirds #4486"
-            small="1명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.meeBits}
-            head="Meebits #15350"
-            small="1명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.cryptoAdz}
-            head="Cryptoads #1347"
-            small="1명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.diaTv}
-            head="DIA TV"
-            small="25명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.hellBound}
-            head="Hellbound"
-            small="50명 추첨"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AdventureCard
-            imgUrl={IMG_LINK.dosiCitizen}
-            head="DOSI Citizen"
-            small="30000명 추첨"
-          />
-        </SwiperSlide> */}
       </Swiper>
       <button
         className="swiper-button-prev"

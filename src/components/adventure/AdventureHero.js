@@ -1,20 +1,41 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import HeroSwitch from "./HeroSwitch";
 import Countdown from "../countdown/Countdown";
-import { IMG_LINK } from "../../img/link";
 import AdventureCard from "./AdventureCard";
 import { useRecoilState } from "recoil";
 import { headerState } from "../../store";
 import HeaderStickyPortal from "../header/HeaderStickyPortal";
-
-import ic_coin from "../../img/ic_coin.png";
+import { go } from "../../utilFunc";
+import { getAdventureNFTs } from "../../api";
+import ParticipationButton from "./ParticipationButton";
 
 import "../../stylesheets/AdventureHero.scss";
-import ParticipationButton from "./ParticipationButton";
+
+const convertNftsToCards = (nfts) =>
+  nfts.map(
+    (nft) =>
+      new Object({
+        ...nft,
+        isVisibleBody: true,
+      })
+  );
+
+const makeAdventureCards = (cards) =>
+  cards.map((card, index) => (
+    <li key={index}>
+      <AdventureCard
+        imgUrl={card.imgUrl}
+        head={card.head}
+        small={card.small}
+        isVisibleBody={card.isVisibleBody}
+      />
+    </li>
+  ));
 
 function AdventureHero() {
   const adventureHeroElement = useRef(null);
   const [header, setHeaderState] = useRecoilState(headerState);
+  const [cards, setCards] = useState([{}, {}, {}, {}, {}, {}]);
 
   // 잠깐 : 리액트 훅 순서대로 써야하는거 뭔말인지 물어보기
   useEffect(() => {
@@ -34,6 +55,12 @@ function AdventureHero() {
       io.disconnect();
     };
   });
+
+  useEffect(() => {
+    getAdventureNFTs().then((nfts) => {
+      go(nfts, convertNftsToCards, (cards) => setCards([...cards]));
+    });
+  }, []);
 
   return (
     <section className="adventure-hero">
@@ -59,54 +86,7 @@ function AdventureHero() {
         <div className="adventure-hero__body">
           <Countdown />
           <ul className="adventure-hero__body__card-grid">
-            <li>
-              <AdventureCard
-                imgUrl={IMG_LINK.moonBird}
-                head="Moonbirds #4486"
-                small="1명 추첨"
-                isVisibleBody={true}
-              />
-            </li>
-            <li>
-              <AdventureCard
-                imgUrl={IMG_LINK.meeBits}
-                head="Meebits #15350"
-                small="1명 추첨"
-                isVisibleBody={true}
-              />
-            </li>
-            <li>
-              <AdventureCard
-                imgUrl={IMG_LINK.cryptoAdz}
-                head="Cryptoads #1347"
-                small="1명 추첨"
-                isVisibleBody={true}
-              />
-            </li>
-            <li>
-              <AdventureCard
-                imgUrl={IMG_LINK.diaTv}
-                head="DIA TV"
-                small="25명 추첨"
-                isVisibleBody={true}
-              />
-            </li>
-            <li>
-              <AdventureCard
-                imgUrl={IMG_LINK.hellBound}
-                head="Hellbound"
-                small="50명 추첨"
-                isVisibleBody={true}
-              />
-            </li>
-            <li>
-              <AdventureCard
-                imgUrl={IMG_LINK.dosiCitizen}
-                head="DOSI Citizen"
-                small="30000명 추첨"
-                isVisibleBody={true}
-              />
-            </li>
+            {makeAdventureCards(cards)}
           </ul>
         </div>
         <div className="adventure-hero__footer">
