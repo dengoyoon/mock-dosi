@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import { getAdventureNFTs } from "../../api";
 import { go } from "../../utilFunc";
+import { IMG_LINK } from "../../img/link";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -20,11 +21,17 @@ const convertNftsToCards = (nfts) =>
   );
 
 const makeAdventureCards = (cards) => {
-  return cards.map((card, index) => (
-    <SwiperSlide key={index}>
-      <AdventureCard imgUrl={card.imgUrl} head={card.head} small={card.small} />
-    </SwiperSlide>
-  ));
+  return cards.map((card, index) => {
+    return (
+      <SwiperSlide key={index}>
+        <AdventureCard
+          imgUrl={card.imgUrl}
+          head={card.head}
+          small={card.small}
+        />
+      </SwiperSlide>
+    );
+  });
 };
 
 function CardCarousel() {
@@ -40,7 +47,7 @@ function CardCarousel() {
 
   useEffect(() => {
     getAdventureNFTs().then((nfts) => {
-      go(nfts, convertNftsToCards, setCards);
+      go(nfts, convertNftsToCards, (cards) => setCards([...cards]));
     });
   }, []);
 
