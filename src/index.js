@@ -4,6 +4,12 @@ import "./stylesheets/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RecoilRoot } from "recoil";
+import { worker } from "./mock/worker";
+
+// eslint-disable-next-line no-undef
+if (process.env.NODE_ENV === "development") {
+  worker.start();
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

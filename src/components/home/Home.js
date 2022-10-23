@@ -29,6 +29,12 @@ function Home() {
     };
   });
 
+  fetch("/todos")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
+  console.log("하하ㅏㅎ");
+
   return (
     <div className="home">
       <div ref={homeElement}>
