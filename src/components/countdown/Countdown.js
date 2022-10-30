@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountdownCard from "./CountdownCard";
 import { go } from "../../utilFunc";
 
@@ -33,16 +33,20 @@ function Countdown({ isInHeader }) {
   const [remainderPeriod, setRemainderPeriod] = useState(
     initialRemainderPeriod
   );
-  setInterval(
-    () =>
-      go(
-        getToday(),
-        (today) => getRemainerPeriod(endDate, today),
-        getObjectRemainderPeriod,
-        setRemainderPeriod
-      ),
-    1000
-  );
+  useEffect(() => {
+    const interval = setInterval(
+      () =>
+        go(
+          getToday(),
+          (today) => getRemainerPeriod(endDate, today),
+          getObjectRemainderPeriod,
+          setRemainderPeriod
+        ),
+      1000
+    );
+
+    return () => clearInterval(interval);
+  });
   /*
   1. 이번 어드벤쳐의 마지막 날짜 객체를 구한다
   2. 현재 날짜 객체를 구한다
