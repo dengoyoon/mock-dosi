@@ -4,7 +4,7 @@ import { go } from "../../utilFunc";
 
 import "../../stylesheets/Countdown.scss";
 
-const endDate = new Date("2022-10-27");
+const endDate = new Date("2022-11-03");
 
 const getToday = () => new Date();
 
