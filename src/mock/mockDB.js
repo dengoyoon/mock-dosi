@@ -28,7 +28,7 @@ const adventureNFTs = [
   },
   {
     imgUrl: IMG_LINK.dosiCitizen,
-    head: "DOSI Citizen",
+    head: "DOS Citizen",
     small: "30000명 추첨",
   },
 ];
