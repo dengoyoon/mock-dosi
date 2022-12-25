@@ -5,7 +5,7 @@ import "../../stylesheets/WelcomeUser.scss";
 function WelcomeUser() {
   return (
     <section className="welcome-user">
-      <div>WelcomeUser</div>
+      <div>WelcomeUse</div>
     </section>
   );
 }
